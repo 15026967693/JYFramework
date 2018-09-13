@@ -1,0 +1,3 @@
+rootProject.name = 'grails-main'
+includeFlat 'all-framework'
+include 'all-framework:grails-framework'

@@ -1,0 +1,66 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.4.RELEASE'
+        druid=[version:'1.1.10']
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+
+    }
+}
+
+apply plugin:'java'
+group = 'com.jiayang'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+
+}
+allprojects{
+    ext {
+        springBootVersion = '2.0.4.RELEASE'
+    }
+    apply plugin: 'java'
+    dependencies{
+        runtime "org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}"
+        compile(group: 'com.alibaba', name: 'druid', version: "${druid.version}")
+    }
+
+}
+
+project(':springboot-java-main') {
+    apply plugin: 'java'
+    dependencies{
+        compile project(':all-framework:java-framework')
+
+    }
+}
+
+project(':springboot-scala-main') {
+    apply plugin: 'java'
+    dependencies{
+        compile project(':all-framework:scala-framework')
+
+    }
+}
+project(':springboot-groovy-main') {
+    apply plugin: 'java'
+    dependencies{
+        compile project(':all-framework:groovy-framework')
+
+    }
+}
+project(':springboot-kotlin-main') {
+    apply plugin: 'java'
+    dependencies{
+        compile project(':all-framework:kotlin-framework')
+    }
+}
+

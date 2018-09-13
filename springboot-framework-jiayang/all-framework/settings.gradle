@@ -1,0 +1,10 @@
+rootProject.name = 'all-framework'
+include 'groovy-framework'
+include 'grails-framework'
+include 'scala-framework'
+include 'kotlin-framework'
+include 'java-framework'
+include 'springboot-start'
+include 'springboot-main'
+include 'springboot-main'
+

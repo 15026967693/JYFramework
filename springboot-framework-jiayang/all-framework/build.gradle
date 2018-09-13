@@ -1,0 +1,102 @@
+buildscript {
+    ext {
+        kotlin = [version:'1.2.61']
+        dokka=[version:'0.9.17']
+    }
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        mavenCentral()
+
+    }
+    dependencies {
+        classpath("org.jetbrains.dokka:dokka-gradle-plugin:${dokka.version}")
+        classpath group: 'org.scala-lang', name: 'scala-library', version: "2.12.6"
+    }
+}
+
+
+
+group = 'com.jiayang'
+version = '0.0.1-SNAPSHOT'
+
+apply plugin:'java'
+
+
+
+
+
+allprojects {
+    apply plugin: 'org.jetbrains.dokka'
+    buildscript {
+        repositories {
+            maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+            mavenCentral()
+            jcenter()
+
+        }
+    }
+    dokka {
+        outputFormat = 'html'
+        outputDirectory = "$buildDir/dokkaDoc"
+        sourceDirs = files(['src/main/kotlin'])
+    }
+
+    ext {
+        kotlinVersion = '1.2.51'
+        spring=[version:'5.0.8.RELEASE']
+        springBoot=[version:'2.0.4.RELEASE']
+        hibernateJpaApi=[version:'1.0.2.Final']
+        springDataJpa=[version:'2.0.9.RELEASE']
+    }
+
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        mavenCentral()
+    }
+
+
+
+
+
+
+}
+subprojects{
+   apply plugin:'java'
+    ext{
+        dokka=[version:'0.9.16']
+        kotlin=[version:'1.2.61']
+        druid=[version:'1.1.10']
+        servlet=[version: '4.0.1']
+
+    }
+    buildscript {
+
+        dependencies {
+
+
+        }
+    }
+    repositories {
+        jcenter()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        mavenCentral()
+
+
+    }
+
+    dependencies
+            {
+                compileOnly(group: 'org.springframework', name: 'spring-web', version: "${spring.version}")
+                compileOnly(group: 'com.alibaba', name: 'druid', version: "${druid.version}")
+                compileOnly(group: 'org.springframework', name: 'spring-context', version: "${spring.version}")
+                compileOnly(group: 'org.springframework.boot', name: 'spring-boot', version: "${springBoot.version}")
+                compileOnly(group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: "${hibernateJpaApi.version}")
+                compileOnly(group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: "${springBoot.version}")
+                compileOnly(group: 'org.springframework.data', name: 'spring-data-jpa', version: "${springDataJpa.version}")
+                compileOnly(group: 'javax.servlet', name: 'javax.servlet-api', version: "${servlet.version}")
+            }
+}
+
+
+dependencies {
+}

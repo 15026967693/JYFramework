@@ -1,0 +1,20 @@
+plugins {
+    id 'groovy'
+    id 'java'
+}
+ext{
+    groovyVersion = '2.4.15'
+}
+group 'com.jiayang'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

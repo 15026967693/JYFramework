@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="springboot-framework-jiayang-springboot-main_main~1" target="1.8" />
+      <module name="springboot-framework-jiayang-springboot-main_test~1" target="1.8" />
+      <module name="springboot-main_integrationTest" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
