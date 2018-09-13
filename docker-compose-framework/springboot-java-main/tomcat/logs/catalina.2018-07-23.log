@@ -1,0 +1,6 @@
+Jul 23, 2018 2:05:30 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+WARNING: Problem with directory [/usr/local/tomcat/"/usr/local/tomcat/lib"], exists: [false], isDirectory: [false], canRead: [false]
+Jul 23, 2018 2:05:30 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+WARNING: Problem with directory [/usr/local/tomcat/"/usr/local/tomcat/lib/*.jar"], exists: [false], isDirectory: [false], canRead: [false]
+Jul 23, 2018 2:05:30 PM org.apache.catalina.startup.ClassLoaderFactory validateFile
+WARNING: Problem with directory [/usr/local/tomcat/"/usr/local/tomcat/lib"], exists: [false], isDirectory: [false], canRead: [false]

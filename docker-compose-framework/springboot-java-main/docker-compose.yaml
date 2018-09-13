@@ -1,0 +1,35 @@
+version: "2"
+services:
+     zookeeper:
+        image: zookeeper
+        restart: always
+        container_name: zookeeper
+        ports:
+             - 2181:2181
+             - 2888:2888
+             - 3888:3888
+        environment:
+                   ZOO_MY_ID: 1
+                   ZOO_SERVERS: server.1=127.0.0.1:2888:3888
+     mysql:
+        image: mysql:latest
+        restart: always
+        container_name: mysql
+        ports:
+             - 3306:3306
+        volumes:
+             - ./mysql/conf:/etc/mysql/conf.d
+             - ./mysql/logs:/logs
+             - ./mysql/data:/var/lib/mysql
+        environment:
+                   MYSQL_ROOT_PASSWORD: 1
+     tomcat:
+        image: tomcat:latest
+        restart: always
+        container_name: tomcat-framework
+        ports:
+             - 8080:8080
+        volumes:
+             - ./tomcat/webapps:/usr/local/tomcat/webapps
+             - ./tomcat/conf:/usr/local/tomcat/conf
+             - ./tomcat/logs:/usr/local/tomcat/logs
